@@ -55,7 +55,8 @@ export class RegistrationPage {
     }
   
     async goto() {
-      await this.page.goto('https://parabank.parasoft.com/parabank/register.htm');
+      await this.page.goto('http://localhost:8080/parabank/register.htm');
+
     }
   
     async signUp(firstname:string, lastname:string, street:string, city:string, state:string, zipcode:string, ssn:string, username:string, password:string, confirmation:string) {
