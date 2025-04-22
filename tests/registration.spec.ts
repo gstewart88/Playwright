@@ -59,6 +59,19 @@ test.describe('required fields', () => {
         await registrationPage.signUp('a', 'b', 'c', 'd', 'e', 'f', 'g', 'a', 'a', '');
         await expect(registrationPage.confirmationerror).toBeVisible();
     });
+    test('all empty', async ({ page }) => {
+        await registrationPage.signUp('', '', '', '', '', '', '', '', '', '');
+        await expect(registrationPage.firstnameerror).toBeVisible();
+        await expect(registrationPage.lastnameerror).toBeVisible();
+        await expect(registrationPage.addresserror).toBeVisible();
+        await expect(registrationPage.cityerror).toBeVisible();
+        await expect(registrationPage.stateerror).toBeVisible();
+        await expect(registrationPage.zipcodeerror).toBeVisible();
+        await expect(registrationPage.ssnerror).toBeVisible();
+        await expect(registrationPage.usernameerror).toBeVisible();
+        await expect(registrationPage.passworderror).toBeVisible();
+        await expect(registrationPage.confirmationerror).toBeVisible();
+    });
   });
 
 test('this username already exists error', async ({ page }) => {
